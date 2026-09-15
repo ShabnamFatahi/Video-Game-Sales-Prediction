@@ -2,17 +2,17 @@
 
 ## Overview
 
-This project focuses on predicting video game sales using machine learning regression models.
+The project involves the use of machine learning regression models to predict video game sales.
 
-The project follows a complete machine learning workflow, including data cleaning, exploratory data analysis, feature engineering, categorical encoding, model training, hyperparameter tuning, model evaluation, and model interpretation.
+The complete machine learning workflow is followed, comprising data cleaning, exploratory data analysis, feature engineering, categorical encoding, model training, hyperparameter tuning, model evaluation, and model interpretation.
 
-The final model was selected by comparing multiple regression algorithms based on MAE, RMSE, and R².
+The model that was ultimately chosen was determined by comparing a number of regression algorithms using MAE, RMSE, and R².
 
 ---
 
 ## Objective
 
-The main objective of this project is to predict video game sales based on information available about each game.
+This project's primary aim is to use the information available about each game to predict its sales.
 
 The features used for modeling include:
 
@@ -22,13 +22,13 @@ The features used for modeling include:
 - Developer
 - Release Year
 
-The target variable is total game sales, which was log-transformed to reduce the effect of extreme values and the strong right-skewness of the original sales distribution.
+The variable in question is total game sales, and in order to reduce the impact of the extreme values and the marked right skew of the original sales distribution it was subjected to a log transformation.
 
 ---
 
 ## Dataset
 
-The dataset contains information about video games, including their platform, genre, publisher, developer, release date, and sales.
+The information in the dataset relates to video games, listing their platform, genre, publisher, developer, release date, and sales.
 
 The target variable used in this project is:
 
@@ -38,7 +38,7 @@ A logarithmic transformation was applied:
 
 log_total_sales = log1p(total_sales)
 
-Rows with missing target values were removed before modeling.
+Before carrying out the modeling, any rows that had missing target values were deleted.
 
 ---
 
@@ -80,7 +80,7 @@ Exploratory analysis was performed to investigate:
 - The effect of the log transformation
 - Feature relationships and distributions
 
-The analysis showed that total sales were highly right-skewed, which motivated the use of a logarithmic transformation.
+The analysis indicated that the total sales were highly right-skewed, which was the reason for applying a logarithmic transformation.
 
 ---
 
@@ -94,7 +94,7 @@ Five regression models were trained and evaluated:
 4. XGBoost Regressor
 5. Tuned XGBoost Regressor
 
-The models were evaluated on a held-out test set.
+The evaluation of the models used a test set that had been held back.
 
 ---
 
@@ -102,23 +102,23 @@ The models were evaluated on a held-out test set.
 
 The following metrics were used:
 
-- MAE (Mean Absolute Error): measures the average absolute difference between actual and predicted values.
-- RMSE (Root Mean Squared Error): gives greater weight to larger prediction errors.
-- R² (R-squared): measures the proportion of variance in the target explained by the model.
+- The mean absolute error (MAE) is the average of the absolute differences between the actual and the predicted values.
+- The Root Mean Squared Error (RMSE) places more weight on larger prediction errors.
+- R², or R-squared, is a measure of the proportion of the variance in the target variable that is accounted for by the model.
 
 ### Results
 
 | Model | MAE | RMSE | R² |
 |---|---:|---:|---:|
 | Linear Regression | 0.1905 | 0.2943 | 0.1487 |
-| Decision Tree | 0.1927 | 0.3402 | -0.1376 |
+0.1927  0.3402  -0.1376
 | Random Forest | 0.1560 | 0.2586 | 0.3426 |
 | XGBoost | 0.1600 | 0.2595 | 0.3380 |
 | Tuned XGBoost | 0.1533 | 0.2495 | 0.3881 |
 
 ### Best Model
 
-Tuned XGBoost achieved the best overall performance.
+The XGBoost model tuned performed the best in terms of overall performance.
 
 It obtained:
 
@@ -126,13 +126,13 @@ It obtained:
 - RMSE: 0.2495
 - R²: 0.3881
 
-Based on these evaluation metrics, Tuned XGBoost was selected as the final model.
+The final model chosen was Tuned XGBoost, based on these evaluation metrics.
 
 ---
 
 ## Model Interpretation
 
-Feature importance and SHAP analysis were used to interpret the final Tuned XGBoost model.
+The final Tuned XGBoost model was interpreted using feature importance and SHAP analysis.
 
 ### Top Features
 
@@ -151,7 +151,7 @@ The most important features included:
 | publisher_freq | 0.0315 |
 | genre_Adventure | 0.0310 |
 
-SHAP analysis was also used to examine how individual features contributed to model predictions.
+SHAP analysis was likewise applied in order to examine the contribution of individual features to the model's predictions.
 
 ---
 
@@ -159,14 +159,14 @@ SHAP analysis was also used to examine how individual features contributed to mo
 
 The final Tuned XGBoost model was further evaluated using:
 
-- Actual vs. Predicted plots
+Actual vs. Predicted plots compare the real values with the values predicted by a model. You can use these plots to see how well your model works. If the points fall along the diagonal, your model predicts well. Points far from the line show where the model gets things wrong. These plots help you spot patterns and mistakes in your predictions.
 - Residual distribution
 - Feature importance
 - SHAP summary analysis
 
-The actual-versus-predicted plot shows that the model captures general patterns in the target variable, although prediction errors increase for some high-sales observations.
+The graph comparing actual with predicted values shows that the model picks up the general patterns in the target variable, even though the prediction errors become larger for some cases involving high sales.
 
-The residual distribution is concentrated around zero, while showing some asymmetry and a positive tail.
+The distribution of the residuals is centred on zero, although it is a bit asymmetric and has a positive tail.
 
 ---
 
@@ -174,12 +174,12 @@ The residual distribution is concentrated around zero, while showing some asymme
 
 Several limitations should be considered:
 
-- The dataset contains missing values in several variables.
-- Video game sales are strongly skewed, requiring a logarithmic transformation.
-- The final model explains approximately 38.8% of the variance in the transformed target.
-- The dataset does not include potentially important commercial variables such as marketing expenditure, advertising budget, game price, or review scores.
-- Frequency encoding represents publisher and developer frequency rather than their individual identities or characteristics.
-- The model's performance is limited by the information available in the dataset.
+The dataset has missing values in several variables.
+The sales of video games are very uneven and therefore need a logarithmic transformation.
+- The last model accounts for about 38.8 per cent of the variance in the transformed target.
+The dataset does not have among its contents certain important commercial variables, for example marketing expenditure, advertising budget, game price, or review scores.
+- Frequency encoding refers to the publisher's and developer's frequency rather than to their individual identities or characteristics.
+-The performance of the model is restricted by the information contained in the dataset.
 
 ---
 
@@ -208,8 +208,8 @@ Video-Game-Sales-Prediction/
 
 ## Conclusion
 
-This project demonstrates a complete machine learning workflow for predicting video game sales.
+This project provides a full machine learning workflow for forecasting video game sales.
 
-Among the evaluated models, Tuned XGBoost achieved the best performance, outperforming the baseline regression and tree-based models according to MAE, RMSE, and R².
+Of all the models considered, Tuned XGBoost showed the best performance and thus exceeded the baseline regression and the tree-based models in terms of MAE, RMSE, and R².
 
-The results also demonstrate the usefulness of model interpretation techniques such as feature importance and SHAP for understanding the factors contributing to machine learning predictions.
+The results also show how useful methods of interpreting models, such as feature importance and SHAP, are for understanding the various factors that contribute to machine learning predictions.
