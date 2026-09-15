@@ -111,14 +111,14 @@ The following metrics were used:
 | Model | MAE | RMSE | R² |
 |---|---:|---:|---:|
 | Linear Regression | 0.1905 | 0.2943 | 0.1487 |
-0.1927  0.3402  -0.1376
+| Decision Tree | 0.1927 | 0.3402 | -0.1376 |
 | Random Forest | 0.1560 | 0.2586 | 0.3426 |
 | XGBoost | 0.1600 | 0.2595 | 0.3380 |
 | Tuned XGBoost | 0.1533 | 0.2495 | 0.3881 |
 
 ### Best Model
 
-The XGBoost model tuned performed the best in terms of overall performance.
+The Tuned XGBoost model achieved the best overall performance.
 
 It obtained:
 
@@ -159,12 +159,12 @@ SHAP analysis was likewise applied in order to examine the contribution of indiv
 
 The final Tuned XGBoost model was further evaluated using:
 
-Actual vs. Predicted plots compare the real values with the values predicted by a model. You can use these plots to see how well your model works. If the points fall along the diagonal, your model predicts well. Points far from the line show where the model gets things wrong. These plots help you spot patterns and mistakes in your predictions.
+- Actual vs. Predicted
 - Residual distribution
 - Feature importance
 - SHAP summary analysis
 
-The graph comparing actual with predicted values shows that the model picks up the general patterns in the target variable, even though the prediction errors become larger for some cases involving high sales.
+The Actual vs. Predicted plot shows that the model captures general patterns in the target variable, although prediction errors increase for some high-sales observations.
 
 The distribution of the residuals is centred on zero, although it is a bit asymmetric and has a positive tail.
 
@@ -174,12 +174,12 @@ The distribution of the residuals is centred on zero, although it is a bit asymm
 
 Several limitations should be considered:
 
-The dataset has missing values in several variables.
-The sales of video games are very uneven and therefore need a logarithmic transformation.
-- The last model accounts for about 38.8 per cent of the variance in the transformed target.
-The dataset does not have among its contents certain important commercial variables, for example marketing expenditure, advertising budget, game price, or review scores.
-- Frequency encoding refers to the publisher's and developer's frequency rather than to their individual identities or characteristics.
--The performance of the model is restricted by the information contained in the dataset.
+- The dataset contains missing values in several variables.
+- Video game sales are highly skewed, requiring a logarithmic transformation.
+- The final model explains approximately 38.8% of the variance in the transformed target.
+- The dataset does not include potentially important commercial variables such as marketing expenditure, advertising budget, game price, or review scores.
+- Frequency encoding represents the frequency of publishers and developers rather than their individual identities or characteristics.
+- Model performance is limited by the information available in the dataset.
 
 ---
 
